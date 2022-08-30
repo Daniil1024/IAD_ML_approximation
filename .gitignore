@@ -1,0 +1,6 @@
+Data/DIS_modelling/venv
+Data/DIS_modelling/venv/*
+
+**__pycache__**
+
+.idea

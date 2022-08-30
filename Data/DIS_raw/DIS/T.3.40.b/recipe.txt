@@ -1,0 +1,7 @@
+agent	units	value
+nigrosin	mg/ml	0.0516
+TiO2	mg/ml	1.87
+MOL	g	83.78
+SEBS	g	25.12
+LDPE	g	0.0
+BH	g	2.13
