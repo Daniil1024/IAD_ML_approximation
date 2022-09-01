@@ -21,3 +21,5 @@ are some mistakes with memory allocation in its code) so you can use the fixed v
 
 postprocess_iad_data.py this script should always be ran after IAD/MCML data is generated. It combines the information from all the relevant files in one
 .npz archive per sample. .npz files are essential since DIS_dataset reads information from them (with the help of dis_utils and utils).
+
+The scripts in the data_analysis directory can be used for visualising the data or applying ML models to do some calculations on the experimental dataset.
