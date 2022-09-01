@@ -4,18 +4,18 @@ from os.path import exists
 
 import numpy as np
 import os
+from os import path
 from multiprocessing import Pool
+
+import PATH
 
 np.random.seed(42)
 random.seed(42)
 def run_mcml(sample_path):
-    RAW_PATH = "Data/DIS_raw"
-    PROCESSED_PATH = "Data/DIS_processed"
-    MCML_PATH = "/home/zhitov01/Downloads/MCML"
     SAMPLE = sample_path
     print(sample_path)
 
-    SAVE_PATH = PROCESSED_PATH + SAMPLE
+    SAVE_PATH = PATH.PROCESSED_PATH + SAMPLE
 
     SAVE_FILE_NAME = "input.mci"
 
@@ -57,17 +57,17 @@ def run_mcml(sample_path):
             mci_file.write(b"1\n\n")
 
     cmd = list()
-    cmd.append(MCML_PATH + "/mcml")
+    cmd.append(PATH.MCML_PATH)
     cmd.append(SAVE_PATH + SAVE_FILE_NAME)
     print("Starting MCML program\n")
     subprocess.run(cmd)
 
 
 if __name__ == "__main__":
-    os.chdir('../')  # for some weird reason cwd initially is in /data_processing
+    os.chdir("../")
     samples = []
-    for n in range(101, 201):
-        samples.append(f"/MCML_frame_from_bijection/T.{n}.{n}.a/1/")
+    for n in range(5):
+        samples.append(f"/new_MCML/T.{n}.{n}.a/1/")
 
     with Pool(19) as p:
         p.map(run_mcml, samples)

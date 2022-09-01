@@ -3,6 +3,9 @@ import subprocess
 import numpy as np
 import os
 from multiprocessing import Pool
+
+import PATH
+
 # IDEA: generate batches of point around some centers in order to do uncertainty estimates.
 # Not useful since it covers the measurement space in pretty much the same way as pure random generation
 np.random.seed(42)
@@ -10,13 +13,10 @@ random.seed(42)
 
 
 def run_iad(sample_file):
-    RAW_PATH = "../Data/DIS_raw"
-    PROCESSED_PATH = "../Data/DIS_processed"
-    IAD_PATH = "/home/zhitov01/Downloads/iad-latest/iad-3-11-1"
     SAMPLE = sample_file
     print(sample_file)
 
-    SAVE_PATH = PROCESSED_PATH + SAMPLE
+    SAVE_PATH = PATH.PROCESSED_PATH + SAMPLE
 
     if os.path.exists(SAVE_PATH):
         if os.path.isfile(SAVE_PATH + "/1.rxt") and os.path.isfile(SAVE_PATH + "/1.txt"):
@@ -94,7 +94,7 @@ def run_iad(sample_file):
 
     print("Starting IAD program")
     cmd = list()
-    cmd.append(IAD_PATH + "/iad")
+    cmd.append(PATH.IAD_PATH + "/iad")
     cmd.append("-q 12")
     cmd.append("-i 8")
     cmd.append("-g 0.7")
@@ -103,6 +103,7 @@ def run_iad(sample_file):
 
 
 if __name__ == "__main__":
+    os.chdir("../")
     samples = []
     for n in range(1, 501):
         samples.append(f"/R/T.{n}.{n}.a/1/")

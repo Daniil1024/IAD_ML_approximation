@@ -2,9 +2,9 @@ from dis_utils import read_dis_measurement_data
 import numpy as np
 import glob
 import os
-#this script combines the information
+#this script combines the information from rxt files to one npz file per sample
 
-BASE_PATH = "../Data/DIS_processed/MCML_data_weird/"
+BASE_PATH = "../Data/DIS_processed/0_spheres_3.0mm/"
 
 paths = glob.glob(BASE_PATH + "*")
 paths = [path[:-2] for path in paths]  # we just strip the '.a' or '.b' each path will then be present twice (since stripping from T.1.1.a and T.1.1.b gives T.1.1
