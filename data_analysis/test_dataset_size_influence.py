@@ -10,7 +10,7 @@ from ML.models.KNN import KNN
 from ML.models.random_forest import RandomForest
 def visualise_history(history):
     points = np.linspace(.5, 6.5, 13)
-    arr = np.array(pickle.load(open("history", 'rb')))
+    arr = np.array(pickle.load(open("trainsize_vs_accuracy", 'rb')))
     plt.title("Fractional error of KNN vs training set size", fontsize=30)
     plt.xticks(fontsize=24)
     plt.yticks(fontsize=24)
@@ -66,7 +66,7 @@ for fraction in points:
     print()
 print("start predicting")
 history = np.array(history)
-pickle.dump(history, open("history", 'wb'))
+pickle.dump(history, open("trainsize_vs_accuracy", 'wb'))
 visualise_history(history)
 
 
