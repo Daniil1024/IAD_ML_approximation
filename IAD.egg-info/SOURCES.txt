@@ -1,4 +1,0 @@
-IAD.egg-info/PKG-INFO
-IAD.egg-info/SOURCES.txt
-IAD.egg-info/dependency_links.txt
-IAD.egg-info/top_level.txt
