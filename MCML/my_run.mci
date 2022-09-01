@@ -1,0 +1,16 @@
+1.0                      	# file version
+1                       	# number of runs
+
+#### SPECIFY DATA FOR RUN 1
+#InParm                    	# Input parameters. cm is used.
+my_run.mco 	A            	# output file name, ASCII.
+1000000                  	# No. of photons
+0.01	0.01               	# dz, dr [cm]
+40	50	90                	# No. of dz, dr, da.
+
+1                        	# Number of layers
+#n	mua	mus	g	d         	# One line for each layer
+1                         	# n for medium above
+1.43	4.458e-2	92.7	0.7	0.2834    	# layer 1
+1                        	# n for medium below
+
